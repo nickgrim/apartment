@@ -57,10 +57,10 @@ module Apartment
 
     private
 
-    #   Fetch the rails database configuration
+    #   Fetch the ActiveRecord database configuration
     #
     def config
-      @config ||= Rails.configuration.database_configuration[Rails.env].symbolize_keys
+      @config ||= ActiveRecord::Base.connection_config
     end
   end
 end
